@@ -1,0 +1,13 @@
+<!-- upload_code.html -->
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+</form>
+
+<!-- review_code.html -->
+<h1>Review for {{ code_file.file.name }}</h1>
+<pre>
+    {{ code_file.file.read|safe }}
+</pre>
+<!-- Display AI review here -->
